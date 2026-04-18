@@ -1,34 +1,22 @@
 import streamlit as st
+from openai import OpenAI
 
 """
-# Hello World, Streamlit!
-
-This is a website to demonstrate Streamlit's API.
-You can stop looking at this now.
-
-Please.
+# Translate
+Come here for all your translation needs
 """
 
-with st.form("my_form"):
-    fav_color = st.selectbox(
-        "What's your favorite color?",
-        [
-            "Red",
-            "Orange",
-            "Yellow",
-            "Green",
-            "Blue",
-            "Indigo",
-            "Violet",
-            "White",
-            'Black'
-        ]
-    )
-    
-    reason = st.text_area("Talk about why that's your favorite color.")
 
-    submitted = st.form_submit_button("Submit")
-    if submitted:
-        st.write("It's interesting that you like " + fav_color + ".")
-        st.write(f"You say it's because: {reason}")
-        
+client = OpenAI(api_key=st.secrets["key"])
+
+system_prompt = "You are a translator. REspond with the sentence, phrase, or word that the user wants you to translate only."
+
+
+with st.form("language"):
+    lang = st.text_input('What language do you want to translate to?')
+
+    text = st.text_input(f"What text do you want to be translated to {lang}")
+
+    b = st.button('Submit')
+    if b:
+        st.write(lang + " " + text)
