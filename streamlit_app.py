@@ -8,7 +8,7 @@ You can stop looking at this now.
 
 Please.
 """
-
+st.title("Titles")
 st.write("This is some text made using Python.")
 
 adjective = st.text_input("Type in an adjective")
