@@ -1,29 +1,18 @@
 import streamlit as st
-from openai import OpenAI
 
 """
-# Translate
-Come here for all your translation needs
+# Hello World, Streamlit!
+
+This is a website to demonstrate Streamlit's API.
+You can stop looking at this now.
+
+Please.
 """
 
+number = 0
 
-client = OpenAI(api_key=st.secrets["key"])
+clicked_button = st.button("Press me!")
+if clicked_button:
+    number += 1
 
-system_prompt = "You are a translator. REspond with the sentence, phrase, or word that the user wants you to translate only."
-
-lang = st.text_input('What language do you want to translate to?')
-
-with st.form("language"):
-
-    text = st.text_input(f"What text do you want to be translated to {lang}")
-
-    b = st.form_submit_button('Submit')
-    if b:
-        response = client.chat.completions.create(
-            model="gpt-3.5-turbo", messages=[
-                {"role":'system','content':system_prompt},
-                {"role":"user","content": f"Translate '{text}' into the language {lang}"}
-            ]
-        )
-
-        st.write(response.choices[0].message.content)
+st.write(number)
