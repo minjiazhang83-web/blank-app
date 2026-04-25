@@ -1,9 +1,10 @@
 import streamlit as st
 
 """
-#                          -------- 
-# Hello World, Streamlit!  |  🙉  |
-#                          --------
+#  ________
+#  |       |
+#  |  🙉   |
+#  |_______|
 This is a website to demonstrate Streamlit's API.
 You can stop looking at this now.
 
