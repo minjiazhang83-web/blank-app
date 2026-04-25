@@ -19,7 +19,8 @@ with st.form("make-tama"):
         if 'tama' not in st.session_state:
             st.session_state['tama']= {'name':name,"type":tama_type,'hunger':0,'thirst':0,'boredness':5}
 
-if st.session_state['play']:
+
+if 'play' in st.session_state and st.session_state['play']:
     st.switch_page('play.py')
 
 
