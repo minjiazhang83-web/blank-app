@@ -2,6 +2,7 @@ import streamlit as st
 
 
 pg = st.navigation([st.Page("play.py")])
+pg.run()
 """
 This is a website to demonstrate Streamlit's API.
 You can stop looking at this now.
