@@ -1,15 +1,13 @@
 import streamlit as st
 
 """
-#  ________
-#  |       |
-#  |  🙉   |
-#  |_______|
 This is a website to demonstrate Streamlit's API.
 You can stop looking at this now.
 
 Please.
 """
+
+st.image("image.png")
 if 'number' not in st.session_state:
 
     st.session_state['number'] = 0
