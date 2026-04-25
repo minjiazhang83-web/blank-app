@@ -1,5 +1,9 @@
 import streamlit as st
 
+if('play' not in st.session_state):
+    st.switch_page('Home.py')
+
+
 st.set_page_config(page_title="Tamagotchi",page_icon="🐵")
 st.image("image.png")
 st.write(f""" 
