@@ -6,8 +6,12 @@ You can stop looking at this now.
 
 Please.
 """
-
+if 'tama' not in st.session_state:
+    st.session_state['tama']= {'Name':'pablo',"type":"monkey",'hunger':0,'thirst':0,'boredness':5}
 st.image("image.png")
+
+feed = st.button('Feed tamagotchi')
+drink = st.button('Give water to tamagotchi')
 if 'number' not in st.session_state:
 
     st.session_state['number'] = 0
