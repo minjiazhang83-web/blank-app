@@ -1,7 +1,7 @@
 import streamlit as st
 
 
-st.Page("pages/play.py", icon = "🐵")
+pg = st.navigation([st.Page("play.py")])
 """
 This is a website to demonstrate Streamlit's API.
 You can stop looking at this now.
