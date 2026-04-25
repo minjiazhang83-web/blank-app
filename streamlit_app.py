@@ -1,7 +1,7 @@
 import streamlit as st
 
 
-st.Page("play.py", icon = "🐵")
+st.Page("pages/play.py", icon = "🐵")
 """
 This is a website to demonstrate Streamlit's API.
 You can stop looking at this now.
