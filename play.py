@@ -52,13 +52,14 @@ if event:
     system_prompt = """
     You are running a virtual pet tamagotchi. This tamagotchi has 3 different stats: hunger, thirst, and boredness.
       each time a user clicks a button you will generate a new event, the event will be of different levels of how important it is. those will be given by the user
+      here is an example of how your json tamagotchi representation should be:
 
 
   {'name':name,"type":tama_type,'hunger':0,'thirst':0,'boredness':5,
-    "event": "event description"} , good
+    "event": "event description"} 
         
 
-    here are some examples:
+    here are some examples of a runthrough of the program:
 
     user starting data: {'name':test,"type":"turtle",'hunger':3,'thirst':2,'boredness':6,
     "event":"Welcome and good luck taking care of your pet!"} , good
