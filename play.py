@@ -15,6 +15,7 @@ their hunger is {st.session_state['tama']['hunger']} and thirst is {st.session_s
 their boredness is {st.session_state['tama']['boredness']}
 
 """)
+st.session_state['tama']['event']
 
 feed = st.button('Feed tamagotchi')
 drink = st.button("Give water to tamagotchi")
@@ -51,20 +52,20 @@ if event:
     You are running a virtual pet tamagotchi. This tamagotchi has 3 different stats: hunger, thirst, and boredness. each time a user clicks a button you will generate a new event, make 60% of the events good, 20% ok, 10% bad, 10% catastrophic. for each event return a new json object of how the stats changed as well as a description:
 
 
-    {
-        "tama": {'name':name,"type":tama_type,'hunger':0,'thirst':0,'boredness':5},
-        "event": "event description"
-    }
+
+  {'name':name,"type":tama_type,'hunger':0,'thirst':0,'boredness':5,
+    "event": "event description"}
+        
 
     here are some examples:
 
-    user starting data: {'name':test,"type":"turtle",'hunger':3,'thirst':2,'boredness':6}
+    user starting data: {'name':test,"type":"turtle",'hunger':3,'thirst':2,'boredness':6,
+    "event":"Welcome and good luck taking care of your pet!"}
 
     assistant response: 
-        {
-        "tama": {'name':test,"type":turtle,'hunger':5,'thirst':5,'boredness':4},
-        "event": "test the turtle goes for a long swim, this makes them tired and thirsty but less bored."
-    }
+        {'name':test,"type":turtle,'hunger':5,'thirst':5,'boredness':4,
+          "event": "test the turtle goes for a long swim, this makes them tired and thirsty but less bored."             }
+   
     """
 
     
@@ -87,6 +88,6 @@ if event:
     st.session_state['tama'] = response['tama']
     
     st.rerun()
-    response['event']
+    
     
     

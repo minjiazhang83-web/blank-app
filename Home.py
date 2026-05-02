@@ -17,7 +17,7 @@ with st.form("make-tama"):
     if submit:
 
         if 'tama' not in st.session_state:
-            st.session_state['tama']= {'name':name,"type":tama_type,'hunger':0,'thirst':0,'boredness':5}
+            st.session_state['tama']= {'name':name,"type":tama_type,'hunger':0,'thirst':0,'boredness':5,"event":"Welcome and good luck taking care of your pet!"}
         st.session_state["play"] = True
 
 if 'play' in st.session_state and st.session_state['play']:
