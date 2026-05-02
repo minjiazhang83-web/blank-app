@@ -17,11 +17,13 @@ their boredness is {st.session_state['tama']['boredness']}
 
 """)
 st.session_state['tama']['event']
-
-feed = st.button('Feed tamagotchi')
-drink = st.button("Give water to tamagotchi")
-play = st.button("Play with tamagotchi")
-wash = st.button("Wash your tamagotchi")
+if st.session_state['tama']['type'] != 'carcass':
+    feed = st.button('Feed tamagotchi')
+    drink = st.button("Give water to tamagotchi")
+    play = st.button("Play with tamagotchi")
+    wash = st.button("Wash your tamagotchi")
+else:
+    redo = st.button("Play again")
 
 if feed and st.session_state['tama']['hunger'] >0:
     st.session_state['tama']['hunger'] -=1
@@ -34,8 +36,10 @@ if play and st.session_state['tama']['boredness'] >0:
 
 if wash and st.session_state['tama']['boredness'] <11:
     st.session_state['tama']['boredness'] +=1
-
-
+if redo:
+    st.session_state['play'] = False
+    del st.session_state['tama']
+    st.rerun()
     # 1
 
 
@@ -86,9 +90,10 @@ if event:
     "event":"Welcome and good luck taking care of your pet!"} , catastrophic
 
     assistant response (catastrophic): 
-        {'name':"test the dead rabbit","type":ra,'hunger':None,'thirst':None,'boredness':None,
+        {'name':"test the dead rabbit","type":'carcass','hunger':None,'thirst':None,'boredness':None,
           "event": "your rabbit went into a bath and came under hypothermic shock, unfortunately passing away"             }
    
+   when catastrophic events happen: make sure to make all the stats none and the type 'carcass'
     """
 
     roll = random.randint(1,100)
