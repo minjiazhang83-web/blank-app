@@ -63,9 +63,10 @@ if event:
     user starting data: {'name':test,"type":"turtle",'hunger':3,'thirst':2,'boredness':6,
     "event":"Welcome and good luck taking care of your pet!"}
 
-    assistant response: 
+    assistant response (good): 
         {'name':test,"type":turtle,'hunger':5,'thirst':5,'boredness':4,
           "event": "test the turtle goes for a long swim, this makes them tired and thirsty but less bored."             }
+   
    
     """
 
