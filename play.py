@@ -100,10 +100,6 @@ if event:
     event_type = ''
     if roll < 45:
         event_type = ', good'
-    elif roll < 65:
-        event_type = ', ok'
-    elif roll < 95:
-        event_type = ", bad"
     else:
         event_type = ', catastrophic'
     # 3
