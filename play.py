@@ -85,7 +85,7 @@ if event:
 
     # 5
     response = (json.loads(response.choices[0].message.content))
-    st.session_state['tama'] = response['tama']
+    st.session_state['tama'] = response
     
     st.rerun()
     
