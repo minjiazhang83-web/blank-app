@@ -101,7 +101,7 @@ if event:
     else:
         event_type = ', catastrophic'
     # 3
-    user_prompt = json.dumps(st.session_state['tama'])
+    user_prompt = json.dumps(st.session_state['tama']) + event_type
 
 
     # 4
