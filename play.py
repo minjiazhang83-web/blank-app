@@ -43,7 +43,7 @@ if event:
         
 
     client = OpenAI(
-        api_key = st.secrets("key")
+        api_key = st.secrets["key"]
     )
 
     # 2
