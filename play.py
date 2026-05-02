@@ -69,7 +69,7 @@ if event:
 
     
     # 3
-    user_prompt = st.session_state['tama']
+    user_prompt = json.dumps(st.session_state['tama'])
 
 
     # 4
