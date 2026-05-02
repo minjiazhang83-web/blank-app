@@ -86,7 +86,7 @@ if event:
     "event":"Welcome and good luck taking care of your pet!"} , catastrophic
 
     assistant response (catastrophic): 
-        {'name':"test the dead rabbit","type":rabbit,'hunger':None,'thirst':None,'boredness':None,
+        {'name':"test the dead rabbit","type":ra,'hunger':None,'thirst':None,'boredness':None,
           "event": "your rabbit went into a bath and came under hypothermic shock, unfortunately passing away"             }
    
     """
