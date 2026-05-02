@@ -49,7 +49,8 @@ if event:
 
     # 2
     system_prompt = """
-    You are running a virtual pet tamagotchi. This tamagotchi has 3 different stats: hunger, thirst, and boredness. each time a user clicks a button you will generate a new event, make 60% of the events good, 20% ok, 10% bad, 10% catastrophic. for each event return a new json object of how the stats changed as well as a description:
+    You are running a virtual pet tamagotchi. This tamagotchi has 3 different stats: hunger, thirst, and boredness.
+      each time a user clicks a button you will generate a new event, make 35% of the events good, 30% ok, 30% bad, 5% catastrophic. for each event return a new json object of how the stats changed as well as a description:
 
 
 
