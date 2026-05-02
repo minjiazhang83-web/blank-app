@@ -14,3 +14,21 @@ their boredness is {st.session_state['tama']['boredness']}
 """)
 
 feed = st.button('Feed tamagotchi')
+drink = st.button("Give water to tamagotchi")
+play = st.button("Play with tamagotchi")
+wash = st.button("Wash your tamagotchi")
+
+if feed:
+    st.session_state['tama']['hunger'] -=1
+    
+if drink:
+    st.session_state['tama']['thirst'] -=1
+    
+if play:
+    st.session_state['tama']['boredness'] -=1
+
+if wash:
+    st.session_state['tama']['boredness'] +=1
+
+
+    
