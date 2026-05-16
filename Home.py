@@ -5,22 +5,27 @@ You can stop looking at this now.
 
 Please.
 """
+#duck, fish, turtle, egg, bunny
+col1, col2, col3 = st.columns(3)
 
-types = ['turtle','duck','fish','egg','rabbit']
-with st.form("make-tama"):
-    tama_type = st.selectbox("Select Tamagotchi type",types)
+with col1:
+    st.header('Duck')
 
-    name = st.text_input("Enter name here")
+    choose_duck = st.button('Choose duck egg')
 
-    submit = st.form_submit_button("Create and play!")
+    st.header("Egg")
 
-    if submit:
+    choose_egg = st.button('Choose egg egg')
 
-        if 'tama' not in st.session_state:
-            st.session_state['tama']= {'name':name,"type":tama_type,'hunger':0,'thirst':0,'boredness':5,"event":"Welcome and good luck taking care of your pet!"}
-        st.session_state["play"] = True
+with col2:
+    st.header('Fish')
+    choose_fish = st.button("Choose fish egg")
 
-if 'play' in st.session_state and st.session_state['play']:
-    st.switch_page('play.py')
+    st.header("Bunny")
+
+    choose_bunny = st.button('Choose Bunny egg')
 
 
+with col3:
+    st.header('Turtle')
+    choose_turtle = st.button("Choose turtle egg")
