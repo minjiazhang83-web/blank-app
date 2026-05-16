@@ -1,9 +1,12 @@
 import streamlit as st
 """
-This is a website to demonstrate Streamlit's API.
-You can stop looking at this now.
+Welcome to Minjias Magical Tamagotchi store!
 
-Please.
+*Pick an egg
+
+*Choose a name
+
+*Begin an adventure with your new friend!
 """
 #duck, fish, turtle, egg, bunny
 col1, col2, col3 = st.columns(3)
@@ -29,3 +32,14 @@ with col2:
 with col3:
     st.header('Turtle')
     choose_turtle = st.button("Choose turtle egg")
+
+if choose_bunny:
+    "Bunny"
+if choose_fish:
+    "Fish"
+if choose_turtle:
+    "Turtle"
+if choose_egg:
+    "Egg"
+if choose_duck:
+    "Duck"
