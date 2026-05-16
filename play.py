@@ -24,6 +24,10 @@ if st.session_state['tama']['type'] != 'carcass':
     wash = st.button("Wash your tamagotchi")
 else:
     redo = st.button("Play again")
+    if redo:
+        st.session_state['play'] = False
+        del st.session_state['tama']
+        st.rerun()
 
 if feed and st.session_state['tama']['hunger'] >0:
     st.session_state['tama']['hunger'] -=1
@@ -36,10 +40,7 @@ if play and st.session_state['tama']['boredness'] >0:
 
 if wash and st.session_state['tama']['boredness'] <11:
     st.session_state['tama']['boredness'] +=1
-if redo:
-    st.session_state['play'] = False
-    del st.session_state['tama']
-    st.rerun()
+
     # 1
 
 
