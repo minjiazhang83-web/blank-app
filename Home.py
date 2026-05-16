@@ -18,17 +18,28 @@ if 'play' in st.session_state and st.session_state['play']:
 with col1:
     st.header('Duck')
 
+    st.image('duck_egg.png')
+
     choose_duck = st.button('Choose duck egg')
 
     st.header("Egg")
+
+    
+    st.image('egg_egg.png')
 
     choose_egg = st.button('Choose egg egg')
 
 with col2:
     st.header('Fish')
+
+    st.image('fish_egg.png')
+    
     choose_fish = st.button("Choose fish egg")
 
+
     st.header("Bunny")
+
+    st.image('bunny_egg.png')
 
     choose_bunny = st.button('Choose Bunny egg')
 
