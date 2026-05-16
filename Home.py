@@ -10,6 +10,10 @@ Welcome to Minjias Magical Tamagotchi store!
 """
 #duck, fish, turtle, egg, bunny
 col1, col2, col3 = st.columns(3)
+if 'type' in st.session_state:
+    tama_type = st.session_state['type'] 
+if 'play' in st.session_state and st.session_state['play']:
+    st.switch_page('play.py')
 
 with col1:
     st.header('Duck')
@@ -34,12 +38,29 @@ with col3:
     choose_turtle = st.button("Choose turtle egg")
 
 if choose_bunny:
+    st.session_state['type'] = 'bunny'
     "Bunny"
 if choose_fish:
+    st.session_state['type']='fish'
     "Fish"
 if choose_turtle:
+    st.session_state['type']='turtle'
     "Turtle"
 if choose_egg:
+    st.session_state['type']='egg'
     "Egg"
 if choose_duck:
+    st.session_state['type']='duck'
     "Duck"
+
+
+with st.form("new-tama"):
+    name = st.text_input("What would you like to name your new pet!")
+
+
+    sub = st.form_submit_button("Submit name and hatch egg")
+
+    if sub:
+        if 'tama' not in st.session_state:
+            st.session_state['tama'] = {'name':name,'type':st.session_state['type'],'hunger':0,'thirst':0,'boredness':0}
+            st.session_state['play'] = True
