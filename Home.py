@@ -25,7 +25,7 @@ with col1:
     st.header("Egg")
 
     
-    st.image('Egg.gif')
+    st.image('Fish.gif')
 
     choose_egg = st.button('Choose egg egg')
 
