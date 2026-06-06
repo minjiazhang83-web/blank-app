@@ -37,6 +37,8 @@ if drink and st.session_state['tama']['thirst'] >0:
     
 if play and st.session_state['tama']['boredness'] >0:
     st.session_state['tama']['boredness'] -=1
+    st.session_state['tama']['hunger'] += 1
+    st.session_state['tama']['thirst'] += 1
 
 if wash and st.session_state['tama']['boredness'] <11:
     st.session_state['tama']['boredness'] +=1
@@ -62,6 +64,8 @@ if event:
 
   {'name':name,"type":tama_type,'hunger':0,'thirst':0,'boredness':5,
     "event": "event description"} 
+
+    the levels of response from bad to good are catastrophic, bad, ok, good
         
 
     here are some examples of a runthrough of the program:
