@@ -9,7 +9,19 @@ if('play' not in st.session_state):
 
 
 st.set_page_config(page_title="Tamagotchi",page_icon="icon.gif")
-st.image("tama.gif")
+
+if st.session_state['tama']['type'] == 'bunny':
+    st.image('tama-bunny.gif')
+elif st.session_state['tama']['type'] == 'fish':
+    st.image('tama-fish.gif')
+elif st.session_state['tama']['type'] == 'turtle':
+    st.image('tama-turtle.gif')
+elif st.session_state['tama']['type'] == 'egg':
+    st.image('tama-egg.gif')
+elif st.session_state['tama']['type'] == 'duck':
+    st.image('tama-duck.gif')
+
+
 st.write(f""" 
 {st.session_state['tama']['name']} is your faithful {st.session_state['tama']['type']} tamagotchi!
 their hunger is {st.session_state['tama']['hunger']} and thirst is {st.session_state['tama']['thirst']}
