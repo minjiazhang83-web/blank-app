@@ -8,8 +8,8 @@ if('play' not in st.session_state):
     st.switch_page('Home.py')
 
 
-st.set_page_config(page_title="Tamagotchi",page_icon="🐵")
-st.image("image.png")
+st.set_page_config(page_title="Tamagotchi",page_icon="icon.gif")
+st.image("tama.gif")
 st.write(f""" 
 {st.session_state['tama']['name']} is your faithful {st.session_state['tama']['type']} tamagotchi!
 their hunger is {st.session_state['tama']['hunger']} and thirst is {st.session_state['tama']['thirst']}
