@@ -24,13 +24,15 @@ with col1:
 
     st.header("Egg")
 
-    
-    st.image('Fish_egg.gif')
 
     choose_egg = st.button('Choose egg egg')
 
 with col2:
     st.header('Fish')
+
+    
+    
+    st.image('Fish_egg.gif')
 
     #st.image('fish_egg.png')
 
