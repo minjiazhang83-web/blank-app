@@ -92,13 +92,15 @@ if event:
 
     # 2
     system_prompt = """
-    You are running a virtual pet tamagotchi. This tamagotchi has 3 different stats: hunger, thirst, and boredness.
+    You are running a virtual pet tamagotchi. This tamagotchi has 3 different stats: hunger, thirst, and boredness. Hunger or thirst at 0 means they die, getting more hungry means their hunger number goes down. eating makes the number go up.
+    boredness is different where 11 boredness is bad, but boredness doesnt kill
       each time a user clicks a button you will generate a new event, the event will be of different levels of how important it is. those will be given by the user
       here is an example of how your json tamagotchi representation should be:
 
 
   {'name':name,"type":tama_type,'hunger':5,'thirst':5,'boredness':5,
     "event": "event description"} 
+
 
     the levels of response from bad to good are catastrophic, bad, ok, good
         
@@ -109,7 +111,7 @@ if event:
     "event":"Welcome and good luck taking care of your pet!"} , good
 
     assistant response (good): 
-        {'name':test,"type":turtle,'hunger':4,'thirst':1,'boredness':3,
+        {'name':test,"type":turtle,'hunger':4,'thirst':1,'boredness':1,
           "event": "test the turtle goes for a long swim, this makes them tired and thirsty but much less bored."             }
    
     user starting data: {'name':test,"type":"turtle",'hunger':3,'thirst':2,'boredness':6,
@@ -124,9 +126,9 @@ if event:
 
     assistant response (ok): 
         {'name':test,"type":turtle,'hunger':2,'thirst':5,'boredness':4,
-          "event": "test the turtle takes a nap, making them slgihtly less bored, and slightly more hungry and thirsty" }
+          "event": "test the turtle takes a nap and a snack, making them slgihtly more bored, but much less hungry and thirsty" }
     
-    user starting data: {'name':test,"type":"turtle",'hunger':2,'thirst':4,'boredness':3,
+    user starting data: {'name':test,"type":"turtle",'hunger':6,'thirst':6,'boredness':5,
     "event":"Welcome and good luck taking care of your pet!"} , catastrophic
 
     assistant response (catastrophic): 
