@@ -133,12 +133,12 @@ if event:
 
     roll = random.randint(1,100)
     event_type = ''
-    if roll < 25:
+    if roll < 35:
         event_type = ', good'
-    elif roll < 60:
+    elif roll < 65:
         event_type = ', ok'
     elif roll < 95:
-
+        event_type = ', bad'
     else:
         event_type = ', catastrophic'
     # 3
