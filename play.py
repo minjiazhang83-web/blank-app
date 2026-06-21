@@ -58,8 +58,9 @@ if drink and st.session_state['tama']['thirst'] < 10:
     
 if play and st.session_state['tama']['boredness'] >0:
     st.session_state['tama']['boredness'] -=1
-    st.session_state['tama']['hunger'] -= 1
-    st.session_state['tama']['thirst'] -= 1
+    if st.session_state['tama]['hunger'] > 1 or st.session_state['tama']['thirst'] >1:
+        st.session_state['tama']['hunger'] -= 1
+        st.session_state['tama']['thirst'] -= 1
 
 if wash and st.session_state['tama']['boredness'] <11:
     st.session_state['tama']['boredness'] +=1
@@ -71,7 +72,11 @@ if wash and st.session_state['tama']['boredness'] <11:
 
 
 if st.session_state['tama']['hunger'] == 0 or st.session_state['tama']['thirst'] == 0:
-    st.session['state']['type'] = 'carcass'
+    st.session_state['type'] = 'carcass'
+    st.session_state['tama']['hunger'] = None
+    st.session_state['tama']['thirst'] = None
+    st.session_state['tama']['boredness'] = None
+    st.rerun()
 
     # 1
 
