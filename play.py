@@ -58,7 +58,7 @@ if drink and st.session_state['tama']['thirst'] < 10:
     
 if play and st.session_state['tama']['boredness'] >0:
     st.session_state['tama']['boredness'] -=1
-    if st.session_state['tama]['hunger'] > 1 or st.session_state['tama']['thirst'] >1:
+    if st.session_state['tama']['hunger'] > 1 or st.session_state['tama']['thirst'] >1:
         st.session_state['tama']['hunger'] -= 1
         st.session_state['tama']['thirst'] -= 1
 
