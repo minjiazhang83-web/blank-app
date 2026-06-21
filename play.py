@@ -8,18 +8,23 @@ if('play' not in st.session_state):
     st.switch_page('Home.py')
 
 
-st.set_page_config(page_title="Tamagotchi",page_icon="icon.gif")
+st.set_page_config(page_title="Tamagotchi",page_icon="🙉")
 
 if st.session_state['tama']['type'] == 'bunny':
-    st.image('tama-bunny.gif')
+    #st.image('tama-bunny.gif')
+    'bunny'
 elif st.session_state['tama']['type'] == 'fish':
-    st.image('tama-fish.gif')
+    #st.image('tama-fish.gif')
+    'fish'
 elif st.session_state['tama']['type'] == 'turtle':
-    st.image('tama-turtle.gif')
+    #st.image('tama-turtle.gif')
+    'turtle'
 elif st.session_state['tama']['type'] == 'egg':
-    st.image('tama-egg.gif')
+    # st.image('tama-egg.gif')
+    'egg'
 elif st.session_state['tama']['type'] == 'duck':
-    st.image('tama-duck.gif')
+    #st.image('tama-duck.gif')
+    'duck'
 
 
 st.write(f""" 

@@ -24,6 +24,8 @@ with col1:
 
     st.header("Egg")
 
+    #st.image('egg_egg.png)
+
 
     choose_egg = st.button('Choose egg egg')
 
@@ -48,6 +50,7 @@ with col2:
 
 with col3:
     st.header('Turtle')
+    #st.image('turtle_egg.png')
     choose_turtle = st.button("Choose turtle egg")
 
 if choose_bunny:
