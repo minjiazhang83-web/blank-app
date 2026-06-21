@@ -34,6 +34,10 @@ their boredness is {st.session_state['tama']['boredness']}
 
 """)
 st.session_state['tama']['event']
+feed = ''
+drink = ''
+play = ''
+wash = ''
 if st.session_state['tama']['type'] != 'carcass':
     feed = st.button('Feed tamagotchi')
     drink = st.button("Give water to tamagotchi")
@@ -46,19 +50,28 @@ else:
         del st.session_state['tama']
         st.rerun()
 
-if st.session_state['tama']['hunger'] >0:
-    st.session_state['tama']['hunger'] -=1
+if feed and st.session_state['tama']['hunger'] <10:
+    st.session_state['tama']['hunger'] +=1
     
-if st.session_state['tama']['thirst'] >0:
-    st.session_state['tama']['thirst'] -=1
+if drink and st.session_state['tama']['thirst'] < 10:
+    st.session_state['tama']['thirst'] +=1
     
-if st.session_state['tama']['boredness'] >0:
+if play and st.session_state['tama']['boredness'] >0:
     st.session_state['tama']['boredness'] -=1
-    st.session_state['tama']['hunger'] += 1
-    st.session_state['tama']['thirst'] += 1
+    st.session_state['tama']['hunger'] -= 1
+    st.session_state['tama']['thirst'] -= 1
 
-if st.session_state['tama']['boredness'] <11:
+if wash and st.session_state['tama']['boredness'] <11:
     st.session_state['tama']['boredness'] +=1
+    roll = random.randint(1,2)
+    if roll == 1:
+        st.session_state['tama']['thirst'] -= 1
+    else:
+        st.session_state['tama']['hunger'] -=1
+
+
+if st.session_state['tama']['hunger'] == 0 or st.session_state['thirst'] == 0:
+    st.session['state']['type'] = 'carcass'
 
     # 1
 
@@ -79,7 +92,7 @@ if event:
       here is an example of how your json tamagotchi representation should be:
 
 
-  {'name':name,"type":tama_type,'hunger':0,'thirst':0,'boredness':5,
+  {'name':name,"type":tama_type,'hunger':5,'thirst':5,'boredness':5,
     "event": "event description"} 
 
     the levels of response from bad to good are catastrophic, bad, ok, good
@@ -87,11 +100,11 @@ if event:
 
     here are some examples of a runthrough of the program:
 
-    user starting data: {'name':test,"type":"turtle",'hunger':3,'thirst':2,'boredness':6,
+    user starting data: {'name':test,"type":"turtle",'hunger':5,'thirst':3,'boredness':6,
     "event":"Welcome and good luck taking care of your pet!"} , good
 
     assistant response (good): 
-        {'name':test,"type":turtle,'hunger':5,'thirst':5,'boredness':3,
+        {'name':test,"type":turtle,'hunger':4,'thirst':1,'boredness':3,
           "event": "test the turtle goes for a long swim, this makes them tired and thirsty but much less bored."             }
    
     user starting data: {'name':test,"type":"turtle",'hunger':3,'thirst':2,'boredness':6,
@@ -101,14 +114,14 @@ if event:
         {'name':test,"type":turtle,'hunger':7,'thirst':5,'boredness':8,
           "event": "you eat plastic on accident, this hurts you making you sick, making you very hungry and thirsty."             }
    
-    user starting data: {'name':test,"type":"turtle",'hunger':1,'thirst':4,'boredness':5,
+    user starting data: {'name':test,"type":"turtle",'hunger':1,'thirst':3,'boredness':10,
     "event":"Welcome and good luck taking care of your pet!"} , ok
 
     assistant response (ok): 
         {'name':test,"type":turtle,'hunger':2,'thirst':5,'boredness':4,
           "event": "test the turtle takes a nap, making them slgihtly less bored, and slightly more hungry and thirsty" }
     
-    user starting data: {'name':test,"type":"turtle",'hunger':3,'thirst':2,'boredness':6,
+    user starting data: {'name':test,"type":"turtle",'hunger':2,'thirst':4,'boredness':3,
     "event":"Welcome and good luck taking care of your pet!"} , catastrophic
 
     assistant response (catastrophic): 
@@ -120,8 +133,12 @@ if event:
 
     roll = random.randint(1,100)
     event_type = ''
-    if roll < 45:
+    if roll < 25:
         event_type = ', good'
+    elif roll < 60:
+        event_type = ', ok'
+    elif roll < 95:
+
     else:
         event_type = ', catastrophic'
     # 3

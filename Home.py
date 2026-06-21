@@ -1,4 +1,5 @@
 import streamlit as st
+import random
 """
 Welcome to Minjias Magical Tamagotchi store!
 
@@ -78,6 +79,6 @@ with st.form("new-tama"):
 
     if sub:
         if 'tama' not in st.session_state:
-            st.session_state['tama'] = {'name':name,'type':st.session_state['type'],'hunger':0,'thirst':0,'boredness':0,'event':'Welcome and good luck taking care of your pet!'}
+            st.session_state['tama'] = {'name':name,'type':st.session_state['type'],'hunger':random.randint(5,10),'thirst':random.randint(5,10),'boredness':2,'event':'Welcome and good luck taking care of your pet!'}
             st.session_state['play'] = True
             st.rerun()
