@@ -46,18 +46,18 @@ else:
         del st.session_state['tama']
         st.rerun()
 
-if feed and st.session_state['tama']['hunger'] >0:
+if st.session_state['tama']['hunger'] >0:
     st.session_state['tama']['hunger'] -=1
     
-if drink and st.session_state['tama']['thirst'] >0:
+if st.session_state['tama']['thirst'] >0:
     st.session_state['tama']['thirst'] -=1
     
-if play and st.session_state['tama']['boredness'] >0:
+if st.session_state['tama']['boredness'] >0:
     st.session_state['tama']['boredness'] -=1
     st.session_state['tama']['hunger'] += 1
     st.session_state['tama']['thirst'] += 1
 
-if wash and st.session_state['tama']['boredness'] <11:
+if st.session_state['tama']['boredness'] <11:
     st.session_state['tama']['boredness'] +=1
 
     # 1
