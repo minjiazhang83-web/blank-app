@@ -69,7 +69,7 @@ if wash and st.session_state['tama']['boredness'] <11:
 
 
 if st.session_state['tama']['hunger'] == 10 or st.session_state['tama']['thirst'] == 10:
-    st.session_state['type'] = 'carcass'
+    st.session_state['tama']['type'] = 'carcass'
     st.session_state['tama']['hunger'] = None
     st.session_state['tama']['thirst'] = None
     st.session_state['tama']['boredness'] = None

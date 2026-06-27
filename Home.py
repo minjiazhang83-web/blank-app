@@ -78,6 +78,6 @@ with st.form("new-tama"):
 
     if sub:
         if 'tama' not in st.session_state:
-            st.session_state['tama'] = {'name':name,'type':st.session_state['type'],'hunger':random.randint(5,10),'thirst':random.randint(5,10),'boredness':2,'event':'Welcome and good luck taking care of your pet!'}
+            st.session_state['tama'] = {'name':name,'type':st.session_state['type'],'hunger':random.randint(3,9),'thirst':random.randint(3,9),'boredness':2,'event':'Welcome and good luck taking care of your pet!'}
             st.session_state['play'] = True
             st.rerun()
