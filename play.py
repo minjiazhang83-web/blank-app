@@ -89,9 +89,9 @@ if event:
 
     # 2
     system_prompt = """
-    You are running a virtual pet tamagotchi. This tamagotchi has 3 different stats: hunger, thirst, and boredness. Hunger or thirst at 0 means they die, hunger or thirst at 10 means they are full.
-    boredness is different where 11 boredness is bad, meaning they are very bored but boredness doesnt kill
-      each time a user clicks a button you will generate a new event, the event will be of different levels of how important it is. those will be given by the user
+    You are running a virtual pet tamagotchi. This tamagotchi has 3 different stats: hunger, thirst, and boredness. Hunger or thirst at 10 means they die, hunger or thirst at 0 means they are full.
+    for boredness the maximum is 11 boredness, meaning they are very bored but boredness doesnt kill
+      each time a user clicks a button you will generate a new event, the event will be of different levels event type. those will be given by the user
       here is an example of how your json tamagotchi representation should be:
 
 
@@ -107,28 +107,28 @@ if event:
     user starting data: {'name':test,"type":"turtle",'hunger':5,'thirst':3,'boredness':6,
     "event":"Welcome and good luck taking care of your pet!"} , good
 
-    assistant response (good): 
-        {'name':test,"type":turtle,'hunger':4,'thirst':1,'boredness':1,
+    data after new event response (good): 
+        {'name':test,"type":turtle,'hunger':6,'thirst':6,'boredness':1,
           "event": "test the turtle goes for a long swim, this makes them tired and thirsty but much less bored."             }
    
     user starting data: {'name':test,"type":"turtle",'hunger':3,'thirst':2,'boredness':6,
     "event":"Welcome and good luck taking care of your pet!"} , bad
 
-    assistant response (bad): 
+    data after new event response (bad): 
         {'name':test,"type":turtle,'hunger':7,'thirst':5,'boredness':8,
           "event": "you eat plastic on accident, this hurts you making you sick, making you very hungry and thirsty."             }
    
-    user starting data: {'name':test,"type":"turtle",'hunger':1,'thirst':3,'boredness':10,
+    user starting data: {'name':test,"type":"turtle",'hunger':9,'thirst':9,'boredness':10,
     "event":"Welcome and good luck taking care of your pet!"} , ok
 
-    assistant response (ok): 
-        {'name':test,"type":turtle,'hunger':2,'thirst':5,'boredness':4,
-          "event": "test the turtle takes a nap and a snack, making them slgihtly more bored, but much less hungry and thirsty" }
+    data after new event response (ok): 
+        {'name':test,"type":turtle,'hunger':4,'thirst':5,'boredness':4,
+          "event": "test the turtle takes a nap and a snack, making them slightly more bored and thirsty, but much less hungry" }
     
-    user starting data: {'name':test,"type":"turtle",'hunger':6,'thirst':6,'boredness':5,
+    user starting data: {'name':test,"type":"turtle",'hunger':1,'thirst':6,'boredness':5,
     "event":"Welcome and good luck taking care of your pet!"} , catastrophic
 
-    assistant response (catastrophic): 
+    data after new event response (catastrophic): 
         {'name':"test the dead rabbit","type":'carcass','hunger':None,'thirst':None,'boredness':None,
           "event": "your rabbit went into a bath and came under hypothermic shock, unfortunately passing away"             }
    
