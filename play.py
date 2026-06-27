@@ -3,7 +3,7 @@ import json
 from openai import OpenAI
 import random
 
-col1, col2 = st.columns(2)
+col1, col2 = st.columns(2, vertical_alignment="center")
 
 
 if('play' not in st.session_state):
@@ -14,7 +14,6 @@ st.set_page_config(page_title="Tamagotchi",page_icon="🙉")
 
 with col1:
     name = st.session_state['tama']['name']
-    st.markdown("Centered text", help="Native alignment feature")
     st.write(name)
     if st.session_state['tama']['type'] == 'bunny':
         st.image('bunny_tama.png')
