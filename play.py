@@ -14,6 +14,7 @@ st.set_page_config(page_title="Tamagotchi",page_icon="🙉")
 
 with col1:
     name = st.session_state['tama']['name']
+    st.markdown("Centered text", help="Native alignment feature")
     name
     if st.session_state['tama']['type'] == 'bunny':
         st.image('bunny_tama.png')
