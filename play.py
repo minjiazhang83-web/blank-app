@@ -9,22 +9,19 @@ if('play' not in st.session_state):
 
 
 st.set_page_config(page_title="Tamagotchi",page_icon="🙉")
-
+name = st.session_state['tama']['name']
+name
 if st.session_state['tama']['type'] == 'bunny':
-    #st.image('tama-bunny.gif')
-    'bunny'
+    st.image('bunny_tama.png')
 elif st.session_state['tama']['type'] == 'fish':
-    #st.image('tama-fish.gif')
-    'fish'
+    st.image('fish_tama.png')
 elif st.session_state['tama']['type'] == 'turtle':
-    #st.image('tama-turtle.gif')
-    'turtle'
+    st.image('turtle_tama.png')
+
 elif st.session_state['tama']['type'] == 'egg':
-    # st.image('tama-egg.gif')
-    'egg'
+    st.image('egg_tama.png')
 elif st.session_state['tama']['type'] == 'duck':
-    #st.image('tama-duck.gif')
-    'duck'
+    st.image('duck_tama.png')
 
 
 st.write(f""" 

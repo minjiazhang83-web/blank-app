@@ -19,13 +19,13 @@ if 'play' in st.session_state and st.session_state['play']:
 with col1:
     st.header('Duck')
 
-    #st.image('duck_egg.png')
+    st.image('duck_egg.gif')
 
     choose_duck = st.button('Choose duck egg')
 
     st.header("Egg")
 
-    #st.image('egg_egg.png)
+    st.image('egg_egg.png')
 
 
     choose_egg = st.button('Choose egg egg')
@@ -37,21 +37,20 @@ with col2:
     
     st.image('Fish_egg.gif')
 
-    #st.image('fish_egg.png')
 
     choose_fish = st.button("Choose fish egg")
 
 
     st.header("Bunny")
 
-    #st.image('bunny_egg.png')
+    st.image('bunny_egg.gif')
 
     choose_bunny = st.button('Choose Bunny egg')
 
 
 with col3:
     st.header('Turtle')
-    #st.image('turtle_egg.png')
+    st.image('turtle_egg.png')
     choose_turtle = st.button("Choose turtle egg")
 
 if choose_bunny:
