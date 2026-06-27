@@ -47,28 +47,28 @@ else:
         del st.session_state['tama']
         st.rerun()
 
-if feed and st.session_state['tama']['hunger'] <10:
-    st.session_state['tama']['hunger'] +=1
+if feed and st.session_state['tama']['hunger'] >0:
+    st.session_state['tama']['hunger'] -=1
     
-if drink and st.session_state['tama']['thirst'] < 10:
-    st.session_state['tama']['thirst'] +=1
+if drink and st.session_state['tama']['thirst'] > 0:
+    st.session_state['tama']['thirst'] -=1
     
 if play and st.session_state['tama']['boredness'] >0:
     st.session_state['tama']['boredness'] -=1
     if st.session_state['tama']['hunger'] > 1 or st.session_state['tama']['thirst'] >1:
-        st.session_state['tama']['hunger'] -= 1
-        st.session_state['tama']['thirst'] -= 1
+        st.session_state['tama']['hunger'] += 1
+        st.session_state['tama']['thirst'] += 1
 
 if wash and st.session_state['tama']['boredness'] <11:
     st.session_state['tama']['boredness'] +=1
     roll = random.randint(1,2)
     if roll == 1:
-        st.session_state['tama']['thirst'] -= 1
+        st.session_state['tama']['thirst'] += 1
     else:
-        st.session_state['tama']['hunger'] -=1
+        st.session_state['tama']['hunger'] +=1
 
 
-if st.session_state['tama']['hunger'] == 0 or st.session_state['tama']['thirst'] == 0:
+if st.session_state['tama']['hunger'] == 10 or st.session_state['tama']['thirst'] == 10:
     st.session_state['type'] = 'carcass'
     st.session_state['tama']['hunger'] = None
     st.session_state['tama']['thirst'] = None
