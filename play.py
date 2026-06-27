@@ -55,7 +55,7 @@ if drink and st.session_state['tama']['thirst'] > 0:
     
 if play and st.session_state['tama']['boredness'] >0:
     st.session_state['tama']['boredness'] -=1
-    if st.session_state['tama']['hunger'] > 1 or st.session_state['tama']['thirst'] >1:
+    if st.session_state['tama']['hunger'] < 10 or st.session_state['tama']['thirst'] <10:
         st.session_state['tama']['hunger'] += 1
         st.session_state['tama']['thirst'] += 1
 
@@ -77,8 +77,8 @@ if st.session_state['tama']['hunger'] == 10 or st.session_state['tama']['thirst'
 
     # 1
 
-
-event = st.button("Generate random event")
+if st.session_state['type'] != 'carcass':
+    event = st.button("Generate random event")
 
 if event:
         
