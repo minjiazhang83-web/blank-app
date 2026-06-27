@@ -50,7 +50,7 @@ with col2:
         if redo:
             st.session_state['play'] = False
             del st.session_state['tama']
-            st.switch_page('home.py')
+            st.switch_page('Home.py')
 
     if feed and st.session_state['tama']['hunger'] >0:
         st.session_state['tama']['hunger'] -=1
