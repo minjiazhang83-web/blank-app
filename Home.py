@@ -10,7 +10,7 @@ Welcome to Minjias Magical Tamagotchi store!
 *Begin an adventure with your new friend!
 """
 #duck, fish, turtle, egg, bunny
-col1, col2, col3 = st.columns(3)
+col1, col2, col3, col4, col5 = st.columns(5)
 if 'type' in st.session_state:
     tama_type = st.session_state['type'] 
 if 'play' in st.session_state and st.session_state['play']:
@@ -23,12 +23,7 @@ with col1:
 
     choose_duck = st.button('Choose duck egg')
 
-    st.header("Egg")
 
-    st.image('egg_egg.png')
-
-
-    choose_egg = st.button('Choose egg egg')
 
 with col2:
     st.header('Fish')
@@ -41,17 +36,26 @@ with col2:
     choose_fish = st.button("Choose fish egg")
 
 
-    st.header("Bunny")
-
-    st.image('bunny_egg.gif')
-
-    choose_bunny = st.button('Choose Bunny egg')
-
 
 with col3:
     st.header('Turtle')
     st.image('turtle_egg.png')
     choose_turtle = st.button("Choose turtle egg")
+
+with col4:
+    st.header("Egg")
+
+    st.image('egg_egg.png')
+
+
+    choose_egg = st.button('Choose egg egg')
+
+with col5:
+    st.header("Bunny")
+
+    st.image('bunny_egg.gif')
+
+    choose_bunny = st.button('Choose Bunny egg')
 
 if choose_bunny:
     st.session_state['type'] = 'bunny'
@@ -68,6 +72,7 @@ if choose_egg:
 if choose_duck:
     st.session_state['type']='duck'
     "Duck"
+
 
 
 with st.form("new-tama"):
