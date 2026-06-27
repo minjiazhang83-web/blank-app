@@ -89,8 +89,8 @@ if event:
 
     # 2
     system_prompt = """
-    You are running a virtual pet tamagotchi. This tamagotchi has 3 different stats: hunger, thirst, and boredness. Hunger or thirst at 0 means they die, getting more hungry means their hunger number goes down. eating makes the number go up.
-    boredness is different where 11 boredness is bad, but boredness doesnt kill
+    You are running a virtual pet tamagotchi. This tamagotchi has 3 different stats: hunger, thirst, and boredness. Hunger or thirst at 0 means they die, hunger or thirst at 10 means they are full.
+    boredness is different where 11 boredness is bad, meaning they are very bored but boredness doesnt kill
       each time a user clicks a button you will generate a new event, the event will be of different levels of how important it is. those will be given by the user
       here is an example of how your json tamagotchi representation should be:
 
