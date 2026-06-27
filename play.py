@@ -78,7 +78,7 @@ if st.session_state['tama']['hunger'] == 10 or st.session_state['tama']['thirst'
     # 1
 
 event = False
-if st.session_state['type'] != 'carcass':
+if st.session_state['tama']['type'] != 'carcass':
     event = st.button("Generate random event")
 if event:
         
