@@ -5,7 +5,7 @@ left_co, cent_co, right_co = st.columns([1,2,1])
 
 with cent_co:
     """
-    #Welcome to Minjias Magical Tamagotchi store!
+    ## Welcome to Minjias Magical Tamagotchi store!
 
     *Pick an egg
 
