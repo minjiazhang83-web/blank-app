@@ -3,7 +3,7 @@ import json
 from openai import OpenAI
 import random
 
-col1, col2, col3 = st.columns(3, vertical_alignment="center")
+col1, col2, col3 = st.columns([1,2,1], vertical_alignment="center")
 
 
 if('play' not in st.session_state):
