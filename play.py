@@ -166,6 +166,13 @@ with col2:
         st.session_state['tama'] = response
         
         st.rerun()
+    
+    "NAME: " + st.session_state['tama']['name']
+    "TYPE: "+ st.session_state['tama']['type']
+    "HUNGER: " + str(st.session_state['tama']['hunger'])
+    "THIRST: " + str(st.session_state['tama']['thirst'])
+    "BOREDNESS: " + str(st.session_state['tama']['boredness'])
+    st.session_state['tama']['event']
         
         
         
