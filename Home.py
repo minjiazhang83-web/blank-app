@@ -55,7 +55,7 @@ with col4:
     choose_egg = st.button('Choose egg egg')
 
 with col5:
-    st.header("Bunny")
+    st.header("Buny")
 
     st.image('bunny_egg.gif')
 
