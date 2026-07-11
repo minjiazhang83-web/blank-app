@@ -4,3 +4,4 @@ backgroundColor = "#f9e4e9"
 secondaryBackgroundColor = "#f7ecbd"
 textColor = "#5f3d45"
 font = "'Saira Stencil':https://fonts.googleapis.com/css2?family=Saira+Stencil:ital,wdth,wght@0,50..125,100..900;1,50..125,100..900&display=swap, sans-serif"
+headingFontSizes = ["3rem","2.75rem","2.5rem"]
