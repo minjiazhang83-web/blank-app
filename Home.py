@@ -1,14 +1,18 @@
 import streamlit as st
 import random
-"""
-Welcome to Minjias Magical Tamagotchi store!
 
-*Pick an egg
+left_co, cent_co, right_co = st.columns([1,2,1])
 
-*Choose a name
+with cent_co:
+    """
+    #Welcome to Minjias Magical Tamagotchi store!
 
-*Begin an adventure with your new friend!
-"""
+    *Pick an egg
+
+    *Choose a name
+
+    *Begin an adventure with your new friend!
+    """
 #duck, fish, turtle, egg, bunny
 col1, col2, col3, col4, col5 = st.columns(5)
 if 'type' in st.session_state:
