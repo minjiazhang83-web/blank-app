@@ -42,11 +42,11 @@ with col2:
 
 
 with col3:
-    st.header('Turt.')
+    st.header('Turtle')
     st.image('turtle_egg.png')
     choose_turtle = st.button("Choose turtle egg")
 
-with col5:
+with col4:
     st.header("Egg")
 
     st.image('egg_egg.png')
@@ -54,8 +54,8 @@ with col5:
 
     choose_egg = st.button('Choose egg egg')
 
-with col4:
-    st.header("Bunny")
+with col5:
+    st.header("Rabbit")
 
     st.image('bunny_egg.gif')
 
