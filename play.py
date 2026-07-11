@@ -82,6 +82,8 @@ with col2:
     event = False
     if st.session_state['tama']['type'] != 'carcass':
         event = st.button("Generate random event")
+    else:
+        st.session_state['tama']['event']
     if event:
             
 
