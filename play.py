@@ -33,7 +33,7 @@ with col1:
     "TYPE: "+ st.session_state['tama']['type']
     "HUNGER: " + str(st.session_state['tama']['hunger'])
     "THIRST: " + str(st.session_state['tama']['thirst'])
-    "BOREDNESS: " + st.session_state['tama']['boredness']
+    "BOREDNESS: " + str(st.session_state['tama']['boredness'])
     st.session_state['tama']['event']
 
 
