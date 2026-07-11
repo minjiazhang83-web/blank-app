@@ -3,7 +3,7 @@ import json
 from openai import OpenAI
 import random
 
-col1, col2, col3 = st.columns([1,2,1], vertical_alignment="center")
+col1, col2 = st.columns([3,1], vertical_alignment="center")
 
 
 if('play' not in st.session_state):
@@ -13,17 +13,8 @@ if('play' not in st.session_state):
 st.set_page_config(page_title="Tamagotchi",page_icon="🙉")
 
 
+
 with col1:
-    st.write(f""" 
-    {st.session_state['tama']['name']} is your faithful {st.session_state['tama']['type']} tamagotchi!
-    their hunger is {st.session_state['tama']['hunger']} and thirst is {st.session_state['tama']['thirst']}
-    their boredness is {st.session_state['tama']['boredness']}
-
-    """)
-    st.session_state['tama']['event']
-
-
-with col2:
     name = st.session_state['tama']['name']
     st.write(name)
     if st.session_state['tama']['type'] == 'bunny':
@@ -40,7 +31,14 @@ with col2:
 
 
 
-with col3:
+    "NAME: " + st.session_state['tama']['name']
+    "TYPE: "+ st.session_state['tama']['type']
+    "HUNGER: " + st.session_state['tama']['hunger']
+    st.session_state['tama']['event']
+
+
+
+with col2:
     feed = ''
     drink = ''
     play = ''
