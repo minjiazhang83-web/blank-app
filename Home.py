@@ -1,7 +1,7 @@
 import streamlit as st
 import random
 
-left_co, cent_co, right_co = st.columns([1,2,1])
+left_co, cent_co, right_co = st.columns([1,4,1])
 
 with cent_co:
     """
