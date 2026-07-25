@@ -15,6 +15,7 @@ st.set_page_config(page_title="Tamagotchi",page_icon="🙉")
 
 
 with col1:
+    st.session_state['tama']['event']
     if st.session_state['tama']['type'] == 'bunny':
         st.image('bunny_tama.png')
     elif st.session_state['tama']['type'] == 'fish':
@@ -174,7 +175,7 @@ with col2:
     "HUNGER: " + str(st.session_state['tama']['hunger'])
     "THIRST: " + str(st.session_state['tama']['thirst'])
     "BOREDNESS: " + str(st.session_state['tama']['boredness'])
-    st.session_state['tama']['event']
+    
         
         
         
